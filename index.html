@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Generate some link for app promote</title>
+<meta name="description" content="Generate some link for app promote(Google play, Apple store, Firebase Dynamic Link)">
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+<style>
+    section {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+    h3 {
+        margin: 0;
+    }
+    p {
+        margin: 0 0 .5rem 0;
+        font-size: 14px;
+    }
+</style>
+</head>
+<body>
+    <section>
+        <h1>Generate app link for promote, deeplink, analytics</h1>
+        <h2>Dynamic link</h2>
+        <input type="text" id="app_code">
+        <h3>app_code</h3>
+        <p>
+        Generate from firebase console
+        </p>
+        <input type="text" id="link">
+        <h3>link</h3>
+        <p>
+        The link your app will open. You can specify a URL that your app can handle, typically an app's content/payload, which can initiate app-specific logic (such as crediting the user with a coupon or displaying a welcome screen). This link must be a well-formatted URL, be properly URL-encoded, use either HTTP or HTTPS, and cannot be another Dynamic Link.
+        </p>
+        <input type="text" id="apn">
+        <h3>apn</h3>
+        <p>
+        The package name of the Android app to use to open the link. The app must be connected to your project from the Overview page of the Firebase console. Required for the Dynamic Link to open an Android app.
+        </p>
+        <input type="text" id="afl">
+        <h3>afl</h3>
+        <p>
+        The link to open when the app isn't installed. Specify this to do something other than install your app from the Play Store when the app isn't installed, such as open the mobile web version of the content, or display a promotional page for your app.
+        </p>
+        <input type="text" id="amv">
+        <h3>amv</h3>
+        <p>
+        The versionCode of the minimum version of your app that can open the link. If the installed app is an older version, the user is taken to the Play Store to upgrade the app.
+        </p>
+        <input type="text" id="ibi">
+        <h3>ibi</h3>
+        <p>
+        The bundle ID of the iOS app to use to open the link. The app must be connected to your project from the Overview page of the Firebase console. Required for the Dynamic Link to open an iOS app.
+        </p>
+        <input type="text" id="ifl">
+        <h3>ifl</h3>
+        <p>
+        The link to open when the app isn't installed. Specify this to do something other than install your app from the App Store when the app isn't installed, such as open the mobile web version of the content, or display a promotional page for your app.
+        </p>
+        <input type="text" id="ius">
+        <h3>ius</h3>
+        <p>
+        Your app's custom URL scheme, if defined to be something other than your app's bundle ID
+        </p>
+        <input type="text" id="ipfl">
+        <h3>ipfl</h3>
+        <p>
+        The link to open on iPads when the app isn't installed. Specify this to do something other than install your app from the App Store when the app isn't installed, such as open the web version of the content, or display a promotional page for your app.
+        </p>
+        <input type="text" id="ipbi">
+        <h3>ipbi</h3>
+        <p>
+        The bundle ID of the iOS app to use on iPads to open the link. The app must be connected to your project from the Overview page of the Firebase console.
+        </p>
+        <input type="text" id="isi">
+        <h3>isi</h3>
+        <p>
+        Your app's App Store ID, used to send users to the App Store when the app isn't installed
+        </p>
+        <input type="text" id="imv">
+        <h3>imv</h3>
+        <p>
+        The version number of the minimum version of your app that can open the link. This flag is passed to your app when it is opened, and your app must decide what to do with it.
+        </p>
+        <input type="text" id="ofl">
+        <h3>ofl</h3>
+        <p>
+        The link to open on platforms beside Android and iOS. This is useful to specify a different behavior on desktop, like displaying a full web page of the app content/payload (as specified by param link) with another dynamic link to install the app.
+        </p>
+        <input type="text" id="efr" placeholder="0 or 1">
+        <h3>efr</h3>
+        <p>
+        If set to '1', skip the app preview page when the Dynamic Link is opened, and instead redirect to the app or store. The app preview page (enabled by default) can more reliably send users to the most appropriate destination when they open Dynamic Links in apps; however, if you expect a Dynamic Link to be opened only in apps that can open Dynamic Links reliably without this page, you can disable it with this parameter. Note: the app preview page is only shown on iOS currently, but may eventually be shown on Android. This parameter will affect the behavior of the Dynamic Link on both platforms.
+        </p>
+        <input type="text" id="st">
+        <h3>st</h3>
+        <p>
+        The title to use when the Dynamic Link is shared in a social post.
+        </p>
+        <input type="text" id="sd">
+        <h3>sd</h3>
+        <p>
+        The description to use when the Dynamic Link is shared in a social post.
+        </p>
+        <input type="text" id="si">
+        <h3>si</h3>
+        <p>
+        The URL to an image related to this link. The image should be at least 300x200 px, and less than 300 KB.
+        </p>
+        <input type="text" id="utmSource">
+        <h3>utm_source</h3>
+        <input type="text" id="utmMedium">
+        <h3>utm_medium</h3>
+        <input type="text" id="utmCampaign">
+        <h3>utm_campaign</h3>
+        <input type="text" id="utmTerm">
+        <h3>utm_term</h3>
+        <input type="text" id="utmContent">
+        <h3>utm_content</h3>
+        <input type="text" id="gclId">
+        <h3>gclid</h3>
+        <input type="text" id="at">
+        <h3>at</h3>
+        <input type="text" id="ct">
+        <h3>ct</h3>
+        <input type="text" id="mt">
+        <h3>mt</h3>
+        <input type="text" id="pt">
+        <h3>pt</h3>
+        <button id="gen_d_l" class="pure-button pure-button-primary">Generate</button>
+        <div id="gen_dynamic_link"></div>
+    </section>
+
+
+</body>
+<script>
+
+    function genD() {
+        var appCode =  document.querySelector('#app_code').value,
+            deepLink = document.querySelector('#link').value,
+            packageName = document.querySelector('#apn').value,
+            promotePageAndroid = document.querySelector('#afl').value,
+            minVersionAndroid = document.querySelector('#amv').value,
+            bundleID = document.querySelector('#ibi').value,
+            promotePageIOS = document.querySelector('#ifl').value,
+            schemeUrl = document.querySelector('#ius').value,
+            promotePageIPad = document.querySelector('#ipfl').value,
+            bundleIDIPad = document.querySelector('#ipbi').value,
+            appStoreID = document.querySelector('#isi').value,
+            minVersionIOS = document.querySelector('#imv').value,
+            promotePage = document.querySelector('#ofl').value,
+            skipPreview = document.querySelector('#efr').value,
+            title = document.querySelector('#st').value,
+            description = document.querySelector('#sd').value,
+            image = document.querySelector('#si').value,
+            utm_source = document.querySelector('#utmSource').value,
+            utm_medium = document.querySelector('#utmMedium').value,
+            utm_campaign = document.querySelector('#utmCampaign').value,
+            utm_term = document.querySelector('#utmTerm').value,
+            utm_content = document.querySelector('#utmContent').value,
+            gclid = document.querySelector('#gclId').value,
+            at = document.querySelector('#at').value,
+            ct = document.querySelector('#ct').value,
+            mt = document.querySelector('#mt').value,
+            pt = document.querySelector('#pt').value;
+
+        var link = (deepLink) ? '?link=' + encodeURIComponent(deepLink) : '',
+            apn = (packageName) ? '&apn=' + packageName : '',
+            afl = (promotePageAndroid) ? '&afl=' + encodeURIComponent(promotePageAndroid) : '',
+            amv = (minVersionAndroid) ? '&amv=' + minVersionAndroid : '',
+            ibi = (bundleID) ? '&ibi=' + bundleID : '',
+            ifl = (promotePageIOS) ? '&ifl=' + encodeURIComponent(promotePageIOS) : '',
+            ius = (schemeUrl) ? '&ius=' + schemeUrl : '',
+            ipfl = (promotePageIPad) ? '&ipfl=' + encodeURIComponent(promotePageIPad) : '',
+            ipbi = (bundleIDIPad) ? '&ipbi=' + bundleIDIPad : '',
+            isi = (appStoreID) ? '&isi=' + appStoreID : '',
+            imv = (minVersionIOS) ? '&imv=' + minVersionIOS : '',
+            ofl = (promotePage) ? '&ofl=' + encodeURIComponent(promotePage) : '',
+            efr = (skipPreview) ? '&efr=' + skipPreview : '',
+            st = (title) ? '&st=' + title : '',
+            sd = (description) ? '&sd=' + description : '',
+            si = (image) ? '&si=' + encodeURIComponent(image) : '',
+            utmSource = (utm_source) ? '&utm_source=' + utm_source : '',
+            utmMedium = (utm_medium) ? '&utm_medium=' + utm_medium : '',
+            utmCampaign = (utm_campaign) ? '&utm_campaign=' + utm_campaign : '',
+            utmTerm = (utm_term) ? '&utm_term=' + utm_term : '',
+            utmContent = (utm_content) ? '&utm_content=' + utm_content : '',
+            gclId = (gclid) ? '&gclid=' + gclid : '',
+            at = (at) ? '&at=' + at : '',
+            ct = (ct) ? '&ct=' + ct : '',
+            mt = (mt) ? '&mt=' + mt : '',
+            pt = (pt) ? '&pt=' + pt : '';
+        var dynamicLink = 'https://' + appCode + '.app.goo.gl/' + link + apn + afl + amv + ibi + ifl + ius + ipfl + ipbi + isi + imv + ofl + efr + st + sd + si + utmSource + utmMedium + utmCampaign + utmTerm + utmContent + gclId + at + ct + mt + pt;
+
+
+        document.querySelector('#gen_dynamic_link').innerHTML = dynamicLink;
+    }
+    document.querySelector('#gen_d_l').addEventListener('click', function () {
+        genD();
+    });
+</script>
+</html>
